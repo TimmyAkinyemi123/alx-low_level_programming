@@ -1,23 +1,30 @@
 #include <stdio.h>
 #include "main.h"
-
 /**
- * print_to_98 - print all numbers inputted to 98
- * @n: starting number
+ * print_to_98 - starting point
+ * @n: parameter
  */
-
 void print_to_98(int n)
 {
-	while (n < 98)
+	int i;
+
+	if (n < 98)
 	{
-		printf("%i", n);
-		n++;
+		for (i = n; i <= 98; i++)
+		{
+			printf("%d", i);
+			if (i < 98)
+				printf(", ");
+		}
 	}
-	while (n > 98)
+	else
 	{
-		printf("%i", n);
-		n++;
+		for (i = n; i >= 98; i--)
+		{
+			printf("%d", i);
+			if (i > 98)
+				printf(", ");
+		}
 	}
-	printf("98");
-	putchar('\n');
+	printf("\n");
 }
