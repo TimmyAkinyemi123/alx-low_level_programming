@@ -11,11 +11,11 @@ int main(void)
 	int i;
 
 	printf("%d, %d, ", num1, num2);
-	for (i = 3; i <= 98; i++)
+	for (i = 1; i <= 91; i++)
 	{
 		next_num = num1 + num2;
 		printf("%d", next_num);
-		if (i < 98)
+		if (i < 91)
 			printf(", ");
 		num1 = num2;
 		num2 = next_num;
