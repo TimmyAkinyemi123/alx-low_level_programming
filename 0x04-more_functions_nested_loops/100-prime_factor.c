@@ -6,23 +6,21 @@
 
 int main(void)
 {
-	long long int n = 612852475143;
-	long long int factor = 2;
-	long long int largest_factor = 1;
+	unsigned long int n = 612852475143;
+	unsigned long int factor = 2;
 
 	while (n > 1)
 	{
 		if (n % factor == 0)
 		{
-			largest_factor = factor;
 			n /= factor;
-			while (n % factor == 0)
-			{
-				n /= factor;
-			}
 		}
-		factor++;
+		else
+		{
+			factor++;
+		}
 	}
-	printf("%lld\n", largest_factor);
+
+	printf("%lu\n", factor);
 	return (0);
 }
