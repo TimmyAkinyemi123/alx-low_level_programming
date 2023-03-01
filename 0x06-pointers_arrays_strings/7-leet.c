@@ -1,24 +1,28 @@
 #include "main.h"
 /**
  * leet - replace letters with numbers
- * @s: string
+ * @str: string
  * Return: s
  */
-char *leet(char *s)
+char *leet(char *str)
 {
-	char leet_table[] = "aAeEoOtTlL44330771";
 	int i, j;
+	char c[] = "aAeEoOtTIK";
+	char n[] = "4433007711";
 
-	for (i = 0; s[i] != '\0'; i++)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		for (j = 0; j < 10; j += 2)
+		j = 0;
+		while (c[j] != '\0')
 		{
-			if (s[i] == leet_table[j] || s[i] == leet_table[j + 1])
+			if (str[i] == c[j])
 			{
-				s[i] = leet_table[j + 10];
-				break;
+				str[i] = n[j];
 			}
+			j++;
 		}
+		i++;
 	}
-	return (s);
+	return (str);
 }
