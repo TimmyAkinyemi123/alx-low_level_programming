@@ -1,9 +1,10 @@
 #include "main.h"
 /**
  * _strpbrk -  searches a string for any of a set of bytes
+ * _strspn: returns the number of bytes in s
  * @s: string
  * @accept: pointer variable
- * Return: len
+ * Return: NULL and s
  */
 
 char *_strpbrk(char *s, char *accept)
@@ -24,6 +25,12 @@ char *_strpbrk(char *s, char *accept)
 	}
 	return ((char *) 0);
 }
+/**
+ * _strspn - returns number of bytes in s
+ * @s: string
+ * @accept: pointer variable
+ * Return: len
+ */
 
 unsigned int _strspn(char *s, char *accept)
 {
