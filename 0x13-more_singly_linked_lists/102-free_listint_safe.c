@@ -11,6 +11,9 @@ size_t free_listint_safe(listint_t **h)
 	int i;
 	listint_t *ptr;
 
+	if (h == NULL || *h == NULL)
+		return (0);
+
 	while (*h != NULL)
 	{
 		i = *h - (*h)->next;

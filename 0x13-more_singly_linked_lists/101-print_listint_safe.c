@@ -17,7 +17,7 @@ size_t looped_listint_len(const listint_t *head)
 		return (0);
 	foxy = head->next;
 	brown = (head->next)->next;
-	while (brown != NULL)
+	while (brown)
 	{
 		if (foxy == brown)
 		{
