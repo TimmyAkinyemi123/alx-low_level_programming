@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+int check_palindrome(char *s, int start, int end);
 int is_divisible(int n, int i);
 int _sqrt(int n, int i);
 int _putchar(char c);
