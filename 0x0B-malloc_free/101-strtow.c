@@ -3,7 +3,7 @@
 #include <stddef.h>
 /**
  * num_word - count words of a string
- * @s: character string
+ * @str: character string
  * Return: number of words
  */
 int num_word(char *str)
