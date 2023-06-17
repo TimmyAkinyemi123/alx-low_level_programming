@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include "main.h"
 
+void _err(void);
+int _strlen(char *s);
+int _isdigit(char *s);
 /**
  * _strlen - get length of string
  * @s: string literal
@@ -33,6 +36,7 @@ int _isdigit(char *s)
 	}
 	return (1);
 }
+
 /**
  * _err - prints error message
  */
@@ -41,6 +45,7 @@ void _err(void)
 	printf("Error\n");
 	exit(98);
 }
+
 /**
  * main - multiplies two positive numbers
  * @argc: argument count
@@ -58,7 +63,7 @@ int main(int argc, char *argv[])
 	i = _strlen(str1);
 	j = _strlen(str2);
 	len = i + j + 1;
-	result = malloc(sizeof(int) * len));
+	result = malloc(sizeof(int) * len);
 	if (result == NULL)
 		return (1);
 	for (index = 0; index <= i + j; index++)
@@ -84,7 +89,7 @@ int main(int argc, char *argv[])
 		if (c != 0)
 			_putchar(result[index] + '0');
 	}
-	if (c == NULL)
+	if (c)
 		_putchar('0');
 	_putchar('\n');
 	free(result);
