@@ -28,6 +28,12 @@ size_t count_unique(const listint_t *head)
 				val = val->next;
 				temp = temp->next;
 			}
+			val = val->next;
+			while (val != temp)
+			{
+				num++;
+				val = val->next;
+			}
 			return (num);
 		}
 		val = val->next;
