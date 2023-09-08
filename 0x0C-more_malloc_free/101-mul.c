@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
 	{
 		if (result[index])
 			c = 1;
-		if (c != 0)
+		if (c)
 			_putchar(result[index] + '0');
 	}
 	if (c)
