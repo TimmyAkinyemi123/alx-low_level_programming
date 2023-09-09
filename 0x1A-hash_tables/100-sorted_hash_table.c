@@ -11,33 +11,31 @@
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
-    shash_table_t *new_table;
-    unsigned long int i;
+	shash_table_t *new_table;
+	unsigned long int i;
 
-    if (size <= 0)
-        return (NULL);
+	if (size <= 0)
+		return (NULL);
 
-    new_table = malloc(sizeof(shash_table_t));
-    if (new_table == NULL)
-        return (NULL);
+	new_table = malloc(sizeof(shash_table_t));
+	if (new_table == NULL)
+		return (NULL);
 
-    new_table->size = size;
-    new_table->array = malloc(sizeof(shash_node_t *) * size);
-    if (new_table->array == NULL)
-    {
-        free(new_table);
-        return (NULL);
-    }
+	new_table->size = size;
+	new_table->array = malloc(sizeof(shash_node_t *) * size);
+	if (new_table->array == NULL)
+	{
+		free(new_table);
+		return (NULL);
+	}
 
-    for (i = 0; i < size; i++)
-    {
-        new_table->array[i] = NULL;
-    }
+	for (i = 0; i < size; i++)
+		new_table->array[i] = NULL;
 
-    new_table->shead = NULL;
-    new_table->stail = NULL;
+	new_table->shead = NULL;
+	new_table->stail = NULL;
 
-    return (new_table);
+	return (new_table);
 }
 
 /**
@@ -50,30 +48,30 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-    shash_node_t *new_node, *current_node, *prev_node;
-    unsigned long int index;
+	shash_node_t *new_node, *current_node, *prev_node;
+	unsigned long int index;
 
-    if (ht == NULL || key == NULL || *key == '\0')
-        return (0);
+	if (ht == NULL || key == NULL || *key == '\0')
+		return (0);
 
-    index = key_index((const unsigned char *)key, ht->size);
+	index = key_index((const unsigned char *)key, ht->size);
 
-    /* Check for an existing node with the same key */
-    current_node = ht->array[index];
-    while (current_node != NULL)
-    {
-        if (strcmp(current_node->key, key) == 0)
-        {
-            free(current_node->value);
-            current_node->value = strdup(value);
-            if (current_node->value == NULL)
-                return (0);
-            return (1); 
-        }
-        current_node = current_node->next;
-    }
+	/* Check for an existing node with the same key */
+	current_node = ht->array[index];
+	while (current_node != NULL)
+	{
+		if (strcmp(current_node->key, key) == 0)
+		{
+			free(current_node->value);
+			current_node->value = strdup(value);
+			if (current_node->value == NULL)
+				return (0);
+			return (1); 
+		}
+		current_node = current_node->next;
+	}
 
-    new_node = malloc(sizeof(shash_node_t));
+	new_node = malloc(sizeof(shash_node_t));
     if (new_node == NULL)
         return (0);
 
