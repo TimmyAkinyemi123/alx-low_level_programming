@@ -110,7 +110,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
-	return (1); 
+	return (1);
 }
 
 /**
