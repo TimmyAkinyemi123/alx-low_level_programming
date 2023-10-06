@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include "hash_tables.h"
-
 /**
  * hash_table_create - Creates a hash table
  * @size: The size of the array
@@ -19,7 +18,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (new_table == NULL)
 		return (NULL);
 
-	/* Allocate memory for the array of hash_node_t pointers */
 	new_table->array = malloc(sizeof(hash_node_t *) * size);
 	if (new_table->array == NULL)
 	{
