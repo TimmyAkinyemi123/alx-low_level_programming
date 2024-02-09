@@ -1,6 +1,6 @@
 #ifndef SEARCH_ALGOS_H
 #define SEARCH_ALGOS_H
-
+#include <stddef.h>
 /**
  * struct skiplist_s - Singly linked list with an express lane
  *
